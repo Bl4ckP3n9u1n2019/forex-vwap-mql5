@@ -20,7 +20,7 @@ VWAP (Volume Weighted Average Price) is an intra-day calculation used primarily 
 * Then open MT5 and go to: File > Open Data Folder
 * Then navigate to: MQL5 > Indicators
 * Drag simple-vwap.ex5 (the indicator you downloaded in the first step) into the indicators folder you just opened in the previous step.
-* And that's it! Now close and restart MT5 and add the indicator should appear in MT5 at: Insert > Indicators > Custom > Simple VWAP
+* And that's it! Now close and restart MT5. You can add the indicator by navigating to: Insert > Indicators > Custom > Simple VWAP
 
 ## Version History
 
