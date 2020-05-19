@@ -23,7 +23,7 @@ int OnInit()
    return(INIT_SUCCEEDED);
 }
 
-void updateVwapIndicator(long volume, double high, double low, double close, datetime currentTime)
+void updateVwapIndicator(long currentVol, double high, double low, double close, datetime currentTime)
 {
    /*
    if (currentTime == "21:00")
@@ -32,17 +32,17 @@ void updateVwapIndicator(long volume, double high, double low, double close, dat
    }
    */
    
-   // Computes the current cumulative PV
-   double currentPV = computePV(volume, high, low, close);
+   // Step 1: Computes the current cumulative PV
+   double currentPV = computePV(currentVol, high, low, close);
+   
+   // Step 2: Adds the current PV to the cumulative PV and the current Volume to cumulative volume
    addToCumuPV(currentPV);
+   addToCumuVol(currentVol);
    
-   // Computes the current cumulative Volume
-   addToCumuVol(volume);
-   
-   // Computes the current vwap
+   // Step 3: Computes the current vwap
    double currentVwap = calculateVWAP();
    
-   // Adds the current vwap to the array of historic vwaps to be displayed on the main chart
+   // Step 4: Adds the current vwap to the array of historic vwaps to be displayed on the main chart
    addDouble(currentVwap, &vwap);
 }
 
@@ -107,7 +107,7 @@ private addDouble(double value, double &array[])
 }
 
 //+------------------------------------------------------------------+
-//| Custom indicator iteration function: Runs every tick             |
+//| Custom indicator iteration function                              |
 //+------------------------------------------------------------------+
 int OnCalculate(const int rates_total,
                 const int prev_calculated,
