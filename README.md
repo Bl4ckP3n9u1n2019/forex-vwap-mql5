@@ -12,7 +12,7 @@ VWAP (Volume Weighted Average Price) is an intra-day calculation used primarily 
 
 ### Requirements
 
-* You bust be using Metatrader 5 (NOT METATRADER 4)
+* You must be using Metatrader 5 (NOT METATRADER 4)
 
 ### Installing
 
